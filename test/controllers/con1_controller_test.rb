@@ -6,6 +6,11 @@ class Con1ControllerTest < ActionController::TestCase
     assert_response :missing
   end
 
+  test "test failure" do
+    get :error
+    assert_response :success
+  end
+
   test "should get index" do
     get :index
     assert_response :success
