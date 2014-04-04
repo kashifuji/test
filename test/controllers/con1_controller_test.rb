@@ -8,7 +8,7 @@ class Con1ControllerTest < ActionController::TestCase
 
   test "test failure" do
     get :error
-    assert_response :success
+    assert_response :missing
   end
 
   test "should get index" do
