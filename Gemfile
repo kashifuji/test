@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'therubyracer'
+gem 'therubyracer', :group => :linux
 
 gem 'ci_reporter', :group => :test
 
