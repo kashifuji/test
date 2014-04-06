@@ -38,6 +38,8 @@ gem 'ci_reporter', :group => :test
 gem 'simplecov', :require=>false, :group => :test
 gem 'simplecov-rcov', :require=>false, :group => :test
 gem 'rails_best_practices', :group => :test
+gem 'rspec', :group => :test
+gem 'rspec-rails', :group => :test
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
