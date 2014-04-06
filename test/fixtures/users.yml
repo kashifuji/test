@@ -1,9 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  update_time: 2014-04-04
+  name: suzuki
 
 two:
-  name: MyString
-  update_time: 2014-04-04
+  name: tanaka
