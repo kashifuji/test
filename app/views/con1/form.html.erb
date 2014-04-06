@@ -1,0 +1,7 @@
+<h1>form</h1>
+<%= form_for @user,  :url => {:action => 'form'} do |f| %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.submit "send" %>
+<% end %>
+

@@ -1,6 +1,12 @@
 FirstServer::Application.routes.draw do
+  get "con1/form"
+  post "con1/form"
+  get "con1/result"
   get "con1/error"
   get "con1/index"
+
+  resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

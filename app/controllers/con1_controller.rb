@@ -7,6 +7,20 @@ class Con1Controller < ApplicationController
       @name = "guest"
     end
   end
+  def form
+    _request = params[:user]
+    if _request != nil
+      logger.debug("_name = " + _request['name'])
+      # save DB
+      _user = User.new(:name => _request['name'])
+      _user.save
+      redirect_to :controller=>"con1", :action => "result"
+    end
+    @user = User.new
+  end
+  def result
+    
+  end
   def error
     render :nothing => true, :status => 404
   end
