@@ -1,10 +1,10 @@
 class Con1Controller < ApplicationController
   def index
-    u = User.find(1)
-    if u.name = nil
+    begin
+      _user = User.find(1)
+      @name = _user.name
+    rescue ActiveRecord::RecordNotFound
       @name = "guest"
-    else
-      @name = u.name
     end
   end
   def error
