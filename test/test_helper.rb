@@ -5,7 +5,10 @@ if( ENV['COVERAGE'] == 'on' )
   require 'simplecov'
   require 'simplecov-rcov'
   SimpleCov.formatter = SimpleCov::Formatter::RcovFormatter
-  SimpleCov.start
+  SimpleCov.start do
+    add_filter "test/controllers/"
+    add_filter "test/models/"
+  end
 end
 
 class ActiveSupport::TestCase
