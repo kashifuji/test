@@ -9,12 +9,15 @@ class Con1Controller < ApplicationController
   end
   def form
     _request = params[:user]
-    if _request != nil
+    if _request != nil && _request['name'] != nil
       logger.debug("_name = " + _request['name'])
       # save DB
       _user = User.new(:name => _request['name'])
-      _user.save
-      redirect_to :controller=>"con1", :action => "result"
+      if _user.save
+        redirect_to :controller=>"con1", :action => "result"
+      else
+        logger.debug("save error")
+      end
     end
     @user = User.new
   end
