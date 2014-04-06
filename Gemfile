@@ -35,7 +35,8 @@ end
 gem 'therubyracer', :group => :linux
 
 gem 'ci_reporter', :group => :test
-gem 'simplecov', :group => :test
+gem 'simplecov', :require=>false, :group => :test
+gem 'simplecov-rcov', :require=>false, :group => :test
 gem 'rails_best_practices', :group => :test
 
 # Use ActiveModel has_secure_password
