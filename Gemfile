@@ -35,6 +35,8 @@ end
 gem 'therubyracer', :group => :linux
 
 gem 'ci_reporter', :group => :test
+gem 'simplecov', :group => :test
+gem 'rails_best_practices', :group => :test
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
