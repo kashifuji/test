@@ -40,6 +40,8 @@ gem 'simplecov-rcov', :require=>false, :group => :test
 gem 'rails_best_practices', :group => :test
 gem 'rspec', :group => :test
 gem 'rspec-rails', :group => :test
+gem 'factory_girl_rails', :group => :test
+gem 'database_cleaner', :group => :test
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
