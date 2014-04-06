@@ -19,7 +19,6 @@ class Con1Controller < ApplicationController
     @user = User.new
   end
   def result
-    
   end
   def error
     render :nothing => true, :status => 404
