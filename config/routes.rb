@@ -1,6 +1,8 @@
 FirstServer::Application.routes.draw do
   get "con1/form"
   post "con1/form"
+  get "con1/form2"
+  post "con1/form2"
   get "con1/result"
   get "con1/error"
   get "con1/index"

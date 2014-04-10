@@ -1,4 +1,5 @@
 class Con1Controller < ApplicationController
+  #protect_from_forgery :except => ["form2"]
   def index
     begin
       _user = User.find(1)
@@ -6,6 +7,10 @@ class Con1Controller < ApplicationController
     rescue ActiveRecord::RecordNotFound
       @name = "guest"
     end
+  end
+  def form2
+    personal = {'name' => 'taro', 'old' => 45}
+    render :xml => personal
   end
   def form
     _request = params[:user]
