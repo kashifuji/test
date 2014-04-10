@@ -64,4 +64,17 @@ describe Con1Controller do
       expect(response).to render_template("form")
     end
   end
+  describe "Get form2" do
+    it "xml responds successfully with an HTTP 200 status code" do
+      get :form2
+      xml = Nokogiri::XML(response.body)
+      expect(xml.xpath('/objects').size).to eq(1)
+      expect(xml.xpath('/objects/object/name').size).to eq(2)
+      expect(xml.xpath('/objects/object/name')[0].inner_text).to eq("taro")
+      expect(xml.xpath('/objects/object/name')[1].inner_text).to eq("jiro")
+      expect(xml.xpath('/objects/object/old').size).to eq(2)
+      expect(xml.xpath('/objects/object/old')[0].inner_text).to eq("45")
+      expect(xml.xpath('/objects/object/old')[1].inner_text).to eq("40")
+    end
+  end
 end

@@ -43,6 +43,9 @@ gem 'rspec-rails', :group => :test
 gem 'factory_girl_rails', :group => :test
 gem 'database_cleaner', :group => :test
 
+# parser
+gem 'nokogiri'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

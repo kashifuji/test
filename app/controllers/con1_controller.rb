@@ -1,5 +1,5 @@
 class Con1Controller < ApplicationController
-  #protect_from_forgery :except => ["form2"]
+  protect_from_forgery :except => ["form2"]
   def index
     begin
       _user = User.find(1)
@@ -9,7 +9,7 @@ class Con1Controller < ApplicationController
     end
   end
   def form2
-    personal = {'name' => 'taro', 'old' => 45}
+    personal = [{'name' => 'taro', 'old' => 45},{'name' => 'jiro', 'old' => 40}]
     render :xml => personal
   end
   def form
