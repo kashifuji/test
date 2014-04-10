@@ -68,6 +68,8 @@ describe Con1Controller do
     it "xml responds successfully with an HTTP 200 status code" do
       get :form2
       xml = Nokogiri::XML(response.body)
+      expect(response).to be_success
+      expect(response.status).to eq(200)
       expect(xml.xpath('/objects').size).to eq(1)
       expect(xml.xpath('/objects/object/name').size).to eq(2)
       expect(xml.xpath('/objects/object/name')[0].inner_text).to eq("taro")
@@ -75,6 +77,19 @@ describe Con1Controller do
       expect(xml.xpath('/objects/object/old').size).to eq(2)
       expect(xml.xpath('/objects/object/old')[0].inner_text).to eq("45")
       expect(xml.xpath('/objects/object/old')[1].inner_text).to eq("40")
+    end
+  end
+  describe "Post form2" do
+    it "json responds successfully with an HTTP 200 status code" do
+      post :form2, {:parse => "json"}
+      json = JSON.parse(response.body)
+      expect(response).to be_success
+      expect(response.status).to eq(200)
+      expect(json.size).to eq(2)
+      expect(json[0]['name']).to eq('taro')
+      expect(json[0]['old']).to eq(45)
+      expect(json[1]['name']).to eq('jiro')
+      expect(json[1]['old']).to eq(40)
     end
   end
 end

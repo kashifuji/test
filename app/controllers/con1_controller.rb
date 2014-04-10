@@ -10,7 +10,11 @@ class Con1Controller < ApplicationController
   end
   def form2
     personal = [{'name' => 'taro', 'old' => 45},{'name' => 'jiro', 'old' => 40}]
-    render :xml => personal
+    if params[:parse] != nil && params[:parse] == 'json'
+      render :json => personal
+    else
+      render :xml => personal
+    end
   end
   def form
     _request = params[:user]
