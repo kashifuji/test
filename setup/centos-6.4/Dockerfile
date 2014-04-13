@@ -1,5 +1,5 @@
-# ubuntu 
-FROM ubuntu:13.10
+# centos
+FROM centos:6.4
 
 # author
 MAINTAINER kashifuji
@@ -12,11 +12,9 @@ ENV HOME /home/jenkins/docker/
 ENV PATH $PATH:/home/jenkins/docker/.rbenv/bin
 
 # install git
-RUN sudo apt-get install git-core -y
-RUN sudo apt-get install curl -y
-RUN sudo apt-get install gcc -y
-RUN sudo apt-get install build-essential -y
-RUN sudo apt-get install libssl-dev -y
+RUN yum install git -y
+RUN yum install gcc -y
+RUN yum install openssl-devel openssl -y
 
 # install rbenv
 RUN git clone https://github.com/sstephenson/rbenv.git ~/.rbenv 
@@ -26,7 +24,8 @@ RUN cd ~/.rbenv/plugins/ruby-build/; pwd; ./install.sh
 RUN rbenv install 2.1.1
 
 # for rails
-RUN sudo apt-get install libsqlite3-dev -y
+RUN yum install sqlite-devel -y
+RUN yum install gcc-c++ -y
 
 # added test file
 ADD test.sh /home/jenkins/docker/test.sh
