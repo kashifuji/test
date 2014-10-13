@@ -9,7 +9,7 @@ class Con1Controller < ApplicationController
     end
   end
   def form2
-    personal = [{'name' => 'taro', 'old' => 44},{'name' => 'jiro', 'old' => 40}]
+    personal = [{'name' => 'taro', 'old' => 455555},{'name' => 'jiro', 'old' => 40}]
     if params[:parse] != nil && params[:parse] == 'json'
       render :json => personal
     else
